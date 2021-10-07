@@ -1,3 +1,5 @@
+@file:Suppress("MemberVisibilityCanBePrivate", "unused")
+
 package com.github.kantis
 
 import org.mockserver.model.HttpStatusCode
@@ -18,9 +20,11 @@ class ResponseSpec {
       body = Body().apply(builder)
    }
 
-   fun content(content: () -> String) {
-      body = Body(content())
+   fun content(content: String) {
+      body = Body(content)
    }
+
+   fun content(contentProvider: () -> String) = content(contentProvider())
 
    fun contentOf(resourcePath: String, contentType: MediaType = MediaType.APPLICATION_JSON) {
       @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")

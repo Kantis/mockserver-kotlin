@@ -5,6 +5,8 @@ Kotlin-style specifications of expectations for MockServer
 ## Project status
 Proof-of-concept. No artifacts available as of now. Don't expect any support, bug fixes, improvements.
 
+Opinionated. Responds with `200 OK` and `application/json` by default.
+
 ## Comparison
 
 
@@ -32,10 +34,7 @@ mockServerClient.onRequest {
   get("/api/v1/hello")
   withQueryParameter("name", "john")
 }.respondWith {
-  body {
-    content = """{ "greeting": "hello, john!" }"""
-    contentType = MediaType.APPLICATION_JSON
-  }
+  content("""{ "greeting": "hello, john!" }""")
 }
 
 ```
