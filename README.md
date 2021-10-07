@@ -2,6 +2,9 @@
 
 Kotlin-style specifications of expectations for MockServer
 
+## Project status
+Proof-of-concept. No artifacts available as of now. Don't expect any support, bug fixes, improvements.
+
 ## Comparison
 
 

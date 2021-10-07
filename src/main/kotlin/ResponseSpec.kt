@@ -22,8 +22,8 @@ class ResponseSpec {
       body = Body(content())
    }
 
-   fun contentOf(resourcePath: String) {
+   fun contentOf(resourcePath: String, contentType: MediaType = MediaType.APPLICATION_JSON) {
       @Suppress("RECEIVER_NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
-      body = Body(this::class.java.getResource(resourcePath).readText())
+      body = Body(this::class.java.getResource(resourcePath).readText(), contentType)
    }
 }
